@@ -36,6 +36,10 @@ RCT_NOT_IMPLEMENTED(- (instancetype)initWithCoder:(NSCoder *)aDecoder)
   if (_onChange) {
     _onChange(@{ @"timestamp": @(self.date.timeIntervalSince1970 * 1000.0) });
   }
+    
+  if (self.delegate) {
+    [self.delegate didChangeWithDate:self.date];
+  }
 }
 
 - (void)setDatePickerMode:(UIDatePickerMode)datePickerMode

@@ -240,6 +240,22 @@ export const App = () => {
             )}
           </View>
         </ScrollView>
+        <DateTimePicker
+          testID="dateTimePicker"
+          timeZoneOffsetInMinutes={0}
+          minuteInterval={interval}
+          value={date}
+          mode={mode}
+          is24Hour
+          shouldDisplayInput
+          onBlur={() => {
+            setShow(false);
+          }}
+          onChange={onChange}
+          style={{height: 60, width: 200, backgroundColor: 'yellow'}}
+          textColor={color || undefined}
+          neutralButtonLabel={neutralButtonLabel}
+        />
       </SafeAreaView>
     );
   } else {

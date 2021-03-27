@@ -10,6 +10,7 @@
  * @flow strict-local
  */
 import RNDateTimePicker from './picker';
+import RNDateTimeInputPicker from './inputpicker';
 import {toMilliseconds} from './utils';
 import {IOS_DISPLAY, MODE_DATE} from './constants';
 import invariant from 'invariant';
@@ -53,6 +54,7 @@ export default function Picker({
   timeZoneOffsetInMinutes,
   textColor,
   onChange,
+  shouldDisplayInput,
   ...otherProps
 }: IOSNativeProps) {
   const [heightStyle, setHeightStyle] = useState(undefined);
@@ -97,6 +99,30 @@ export default function Picker({
   };
 
   invariant(value, 'A date or time should be specified as `value`.');
+
+  if (shouldDisplayInput) {
+    const dates: DatePickerOptions = {value, maximumDate, minimumDate};
+    toMilliseconds(dates, 'value', 'minimumDate', 'maximumDate');
+
+    return (
+      <RNDateTimeInputPicker
+        testID={testID}
+        ref={_picker}
+        date={dates.value}
+        locale={locale !== null && locale !== '' ? locale : undefined}
+        maximumDate={dates.maximumDate}
+        minimumDate={dates.minimumDate}
+        mode={mode}
+        minuteInterval={minuteInterval}
+        timeZoneOffsetInMinutes={timeZoneOffsetInMinutes}
+        onChange={_onChange}
+        textColor={textColor}
+        onStartShouldSetResponder={() => true}
+        onResponderTerminationRequest={() => false}
+        style={style}
+      />
+    );
+  }
 
   if (!heightStyle) {
     // wait for height to be available in state
