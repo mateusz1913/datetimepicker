@@ -10,6 +10,8 @@ public final class RNConstants {
   public static final String ARG_DISPLAY = "display";
   public static final String ARG_NEUTRAL_BUTTON_LABEL = "neutralButtonLabel";
   public static final String ARG_TZOFFSET_MINS = "timeZoneOffsetInMinutes";
+  public static final String ARG_FIRST_DAY_OF_WEEK = "firstDayOfWeek";
+  public static final String ARG_DISABLED = "disabled";
   public static final String ACTION_DATE_SET = "dateSetAction";
   public static final String ACTION_TIME_SET = "timeSetAction";
   public static final String ACTION_DISMISSED = "dismissedAction";

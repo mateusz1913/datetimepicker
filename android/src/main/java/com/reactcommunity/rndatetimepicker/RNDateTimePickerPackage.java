@@ -2,6 +2,7 @@ package com.reactcommunity.rndatetimepicker;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Enumeration;
 import java.util.List;
 
 import com.facebook.react.ReactPackage;
@@ -20,6 +21,9 @@ public class RNDateTimePickerPackage implements ReactPackage {
 
     @Override
     public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
-      return Collections.emptyList();
+      return Arrays.<ViewManager>asList(
+          new RNDatePickerViewManager(),
+          new RNTimePickerViewManager(reactContext)
+      );
     }
 }

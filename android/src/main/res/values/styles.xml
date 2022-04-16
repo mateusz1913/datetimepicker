@@ -5,4 +5,38 @@
     <style name="SpinnerTimePickerStyle" parent="android:Widget.Material.Light.TimePicker" tools:targetApi="lollipop">
         <item name="android:timePickerMode">spinner</item>
     </style>
+<!--    <style name="CalendarDatePickerStyle" parent="android:Widget.Material.Light.DatePicker" tools:targetApi="lollipop">-->
+<!--        <item name="android:datePickerMode">calendar</item>-->
+<!--        <item name="android:calendarViewShown">true</item>-->
+<!--        <item name="android:spinnersShown">false</item>-->
+<!--        <item name="android:headerBackground">@android:color/holo_blue_dark</item>-->
+<!--        <item name="android:dayOfWeekBackground">@android:color/holo_blue_dark</item>-->
+<!--        <item name="android:dayOfWeekTextAppearance">@android:color/holo_blue_dark</item>-->
+<!--        <item name="android:headerMonthTextAppearance">@android:color/holo_blue_dark</item>-->
+<!--        <item name="android:headerDayOfMonthTextAppearance">@android:color/holo_blue_dark</item>-->
+<!--        <item name="android:headerYearTextAppearance">@android:color/holo_blue_dark</item>-->
+<!--&lt;!&ndash;        <item name="android:headerSelectedTextColor">@color/chosen_header_bg_color</item>&ndash;&gt;-->
+<!--        <item name="android:yearListItemTextAppearance">@android:color/holo_blue_dark</item>-->
+<!--        <item name="android:yearListSelectorColor">@android:color/holo_blue_dark</item>-->
+<!--        <item name="android:calendarTextColor">@android:color/holo_blue_dark</item>-->
+<!--&lt;!&ndash;        <item name="android:calendarSelectedTextColor">@color/chosen_header_bg_color</item>&ndash;&gt;-->
+<!--        <item name="android:selectableItemBackgroundBorderless">@android:color/holo_blue_dark</item>-->
+<!--        <item name="android:selectableItemBackground">@android:color/holo_blue_dark</item>-->
+<!--        <item name="android:selectable">true</item>-->
+<!--        <item name="android:colorAccent">@android:color/holo_orange_dark</item>-->
+<!--        <item name="android:color">@android:color/holo_blue_bright</item>-->
+<!--        <item name="android:colorControlActivated">@android:color/holo_red_dark</item>-->
+<!--        <item name="android:colorControlHighlight">@android:color/holo_green_light</item>-->
+<!--        <item name="android:colorBackground">@android:color/holo_orange_light</item>-->
+<!--        <item name="android:elevation">10dp</item>-->
+<!--    </style>-->
+<!--    <style name="HeaderYear">-->
+<!--        <item name="android:textColor">@android:color/holo_orange_light</item>-->
+<!--        <item name="android:textColorHint">@android:color/holo_green_light</item>-->
+<!--        <item name="android:textColorHighlight">@android:color/holo_red_dark</item>-->
+<!--        <item name="android:textColorLink">@android:color/holo_blue_dark</item>-->
+<!--        <item name="android:lineSpacingMultiplier">1.0</item>-->
+<!--        <item name="android:textSize">16sp</item>-->
+<!--        <item name="fontFamily">sans-serif-medium</item>-->
+<!--    </style>-->
 </resources>

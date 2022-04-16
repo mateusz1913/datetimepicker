@@ -10,6 +10,7 @@ import {
   TextInput,
   useColorScheme,
   Switch,
+  processColor,
 } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import SegmentedControl from '@react-native-community/segmented-control';
@@ -24,6 +25,8 @@ import {
   ANDROID_DISPLAY,
   IOS_DISPLAY,
 } from '../src/constants';
+import DatePicker from './datepicker';
+import TimePicker from './timepicker';
 
 const ThemedText = (props) => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -107,6 +110,14 @@ export const App = () => {
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.dark : Colors.lighter,
   };
+
+  const [d, setD] = React.useState(new Date(1598051730000));
+  const [t, setT] = React.useState(new Date(1598051730000));
+
+  const min = new Date();
+  min.setMonth(min.getMonth() - 1);
+  const max = new Date();
+  max.setMonth(max.getMonth() + 1);
 
   if (Platform.OS !== 'windows') {
     return (
@@ -252,6 +263,48 @@ export const App = () => {
                 title="setTzOffsetInMinutes to 60"
               />
             </View>
+            {/* <DatePicker
+              // minimumDate={min}
+              // maximumDate={max}
+              onDateChange={({nativeEvent}) => {
+                console.log(nativeEvent);
+                const newDate = new Date();
+                newDate.setFullYear(
+                  nativeEvent.year,
+                  nativeEvent.month,
+                  nativeEvent.day,
+                );
+                setD(newDate);
+              }}
+              style={{alignSelf: 'stretch', height: 500}}
+              value={d}
+            />
+            <Text
+              onPress={() => {
+                const newDate = new Date();
+                newDate.setFullYear(2020, 6, 1);
+                setD(newDate);
+              }}>
+              {d.toDateString()}
+            </Text>
+            <TimePicker
+              // minimumDate={min}
+              // maximumDate={max}
+              is24Hour={true}
+              onTimeChange={({nativeEvent}) => {
+                console.log(nativeEvent);
+                const newDate = new Date();
+                newDate.setHours(nativeEvent.hour, nativeEvent.minute);
+                setT(newDate);
+              }}
+              style={{
+                alignSelf: 'stretch',
+                backgroundColor: processColor('#FF009999'),
+                height: 500,
+              }}
+              value={t}
+            />
+            <Text>{t.toTimeString()}</Text> */}
             {show && (
               <DateTimePicker
                 testID="dateTimePicker"
@@ -270,6 +323,32 @@ export const App = () => {
             )}
           </View>
         </ScrollView>
+        <View style={{height: 500, alignSelf: 'stretch'}}>
+          <DatePicker
+            // minimumDate={min}
+            // maximumDate={max}
+            onDateChange={({nativeEvent}) => {
+              console.log(nativeEvent);
+              const newDate = new Date();
+              newDate.setFullYear(
+                nativeEvent.year,
+                nativeEvent.month,
+                nativeEvent.day,
+              );
+              setD(newDate);
+            }}
+            style={{alignSelf: 'stretch', height: 450}}
+            value={d}
+          />
+          <Text
+            onPress={() => {
+              const newDate = new Date();
+              newDate.setFullYear(2020, 6, 1);
+              setD(newDate);
+            }}>
+            {d.toDateString()}
+          </Text>
+        </View>
       </SafeAreaView>
     );
   } else {
